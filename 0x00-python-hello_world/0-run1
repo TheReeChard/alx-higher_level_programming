@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+length = 2000
+breadth = 1000
+area = f'{length * breadth}'
+print(f'{area}')
