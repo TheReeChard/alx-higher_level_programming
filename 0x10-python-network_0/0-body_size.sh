@@ -2,4 +2,7 @@
 # Bash script that takes in a URL
 # sends a request to that URL
 # Displays the size of the body of the response
-curl -s "$1" | wc -c
+url=$1
+response=$(curl -s -w "\n%{size_download}" $url)
+size=$(echo "$response" | tail -n 1)
+echo "Size of response body: $size bytes"
