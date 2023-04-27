@@ -4,5 +4,5 @@
 # Displays the size of the body of the response
 url=$1
 response=$(curl -s -w "\n%{size_download}" $url)
-size=$(echo "$response" | tail -n 1)
+size=$(echo "$response" | wc -c)
 echo "$size"
